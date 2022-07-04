@@ -1,0 +1,11 @@
+// MARK: App General
+
+"app_name" = "MatchUp";
+
+// MARK: WALKTHROUGH
+"already_have_account" = "Hesabın zaten var mı?";
+"sign_in" = "Sign in";
+"get_started" = "GET STARTED";
+
+"home_page" = "Ana Sayfa";
+
