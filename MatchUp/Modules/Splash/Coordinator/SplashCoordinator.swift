@@ -5,11 +5,12 @@
 //  Created by Can Yoldaş on 4.07.2022.
 //
 
-import Foundation
-import UIKit
+import class UIKit.UINavigationController
+import class UIKit.UIViewController
+
 
 final class SplashCoordinator: CoordinatorProtocol {
-    var parentCoordinator: ParentCoordinatorDelegate?
+    weak var parentCoordinator: ParentCoordinatorDelegate?
     var children: [CoordinatorProtocol] = []
     private(set) var rootViewController: UINavigationController!
     private let dependencyContainer: DependencyContainer
@@ -35,7 +36,7 @@ extension SplashCoordinator: SplashCoordinatorDelegate {
         
         rootViewController.viewControllers.removeAll()
         rootViewController.viewControllers = [mainVC]
-        childDidFinish(child: self)
+        dismiss()
     }
     
 }

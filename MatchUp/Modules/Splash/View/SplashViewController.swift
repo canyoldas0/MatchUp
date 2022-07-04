@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import CYBase
-import SnapKit
+import struct SnapKit.ConstraintViewDSL
 
 class SplashViewController: BaseViewController {
     
