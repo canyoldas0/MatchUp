@@ -31,8 +31,7 @@ final class SplashCoordinator: CoordinatorProtocol {
 extension SplashCoordinator: SplashCoordinatorDelegate {
     
     func goToMain() {
-        let mainVC = UIViewController()
-        mainVC.view.backgroundColor = .red
+        let mainVC = WalkthroughViewController()
         
         rootViewController.viewControllers.removeAll()
         rootViewController.viewControllers = [mainVC]

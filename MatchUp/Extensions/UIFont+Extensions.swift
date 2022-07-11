@@ -13,7 +13,7 @@ extension UIFont {
         UIFont(name: "Inter-Regular", size: 14)!
     }
     
-    class var mainMedium: UIFont? {
+    class var mainMedium: UIFont {
         UIFont(name: "Inter-Medium", size: 14)!
     }
     
