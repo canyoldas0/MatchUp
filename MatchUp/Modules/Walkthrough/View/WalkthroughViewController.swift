@@ -14,7 +14,7 @@ class WalkthroughViewController: BaseViewController {
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.backgroundColor = .white
         temp.preferredIndicatorImage = UIImage(named: "pageControlRectangle")
-        temp.pageIndicatorTintColor = .gray
+        temp.pageIndicatorTintColor = .disabled
         temp.currentPageIndicatorTintColor = .labelBlue
         temp.backgroundStyle = .automatic
         temp.numberOfPages = 3
@@ -61,6 +61,8 @@ class WalkthroughViewController: BaseViewController {
         return temp
     }()
     
+    private let scrollView = UIScrollView()
+    
     override func configureUI() {
         super.configureUI()
         view.backgroundColor = .white
@@ -68,6 +70,8 @@ class WalkthroughViewController: BaseViewController {
     }
     
     private func setupViews() {
+        
+        view.addSubview(scrollView)
         view.addSubview(stackView)
         
         stackView.addArrangedSubview(pageControl)
@@ -83,6 +87,12 @@ class WalkthroughViewController: BaseViewController {
         labelStack.setCustomSpacing(2, after: alreadySignInLabel)
         
         NSLayoutConstraint.activate([
+            
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            
         
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -54),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

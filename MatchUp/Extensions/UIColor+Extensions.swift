@@ -16,4 +16,8 @@ extension UIColor {
     class var labelBlue: UIColor {
         UIColor(red: 0.29, green: 0.35, blue: 0.92, alpha: 1.00)
     }
+    
+    class var disabled: UIColor {
+        UIColor(red: 0.90, green: 0.90, blue: 0.92, alpha: 1.00)    
+    }
 }
