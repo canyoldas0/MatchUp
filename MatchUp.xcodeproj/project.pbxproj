@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0B45D7288431700022A53A /* WalkthroughScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45D6288431700022A53A /* WalkthroughScrollCell.swift */; };
 		1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */; };
 		1EA4FE132873749000B6719B /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */; };
 		1EA4FE142873749000B6719B /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0B2873749000B6719B /* Inter-Black.ttf */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0B45D6288431700022A53A /* WalkthroughScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughScrollCell.swift; sourceTree = "<group>"; };
 		1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		1EA4FE0B2873749000B6719B /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -89,9 +91,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0B45D5288431660022A53A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45D6288431700022A53A /* WalkthroughScrollCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		1E9D02BE287C2DF8001AE9B9 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				1E0B45D5288431660022A53A /* Subviews */,
 				1E9D02BF287C2E37001AE9B9 /* View */,
 			);
 			path = Walkthrough;
@@ -368,6 +379,7 @@
 				1EA4FE3128737DFD00B6719B /* DependencyContainer.swift in Sources */,
 				1EA4FE3328737EDC00B6719B /* SplashCoordinatorDelegate.swift in Sources */,
 				1EA4FE2B28737D0B00B6719B /* AppCoordinator.swift in Sources */,
+				1E0B45D7288431700022A53A /* WalkthroughScrollCell.swift in Sources */,
 				1EA4FE2F28737D6600B6719B /* SplashCoordinator.swift in Sources */,
 				1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */,
 				1EEDCC1E287359DC003FBD61 /* SplashViewModel.swift in Sources */,

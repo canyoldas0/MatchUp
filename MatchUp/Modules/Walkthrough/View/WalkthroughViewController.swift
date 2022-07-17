@@ -9,6 +9,21 @@ import UIKit
 
 class WalkthroughViewController: BaseViewController {
     
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let temp = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.backgroundColor = .clear
+        temp.isPagingEnabled = true
+        temp.register(WalkthroughScrollCell.self, forCellWithReuseIdentifier: WalkthroughScrollCell.identifier)
+        return temp
+    }()
+    
     private let pageControl: UIPageControl = {
         let temp = UIPageControl()
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +33,7 @@ class WalkthroughViewController: BaseViewController {
         temp.currentPageIndicatorTintColor = .labelBlue
         temp.backgroundStyle = .automatic
         temp.numberOfPages = 3
+        temp.isEnabled = false
         return temp
     }()
     
@@ -31,7 +47,7 @@ class WalkthroughViewController: BaseViewController {
     }()
     
     private let alreadySignInLabel: UILabel = {
-       let temp = UILabel()
+        let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.text = "already_have_account".localized()
         temp.font = .mainRegular.withSize(15)
@@ -40,7 +56,7 @@ class WalkthroughViewController: BaseViewController {
     }()
     
     private let signInButton: UIButton = {
-       let temp = UIButton()
+        let temp = UIButton()
         temp.setTitle("sign_in".localized(), for: .normal)
         temp.setTitleColor(UIColor.labelBlue, for: .normal)
         temp.titleLabel?.font = .mainMedium.withSize(15)
@@ -54,24 +70,38 @@ class WalkthroughViewController: BaseViewController {
     }()
     
     private let stackView: UIStackView = {
-       let temp = UIStackView()
+        let temp = UIStackView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.axis = .vertical
         temp.alignment = .center
         return temp
     }()
     
-    private let scrollView = UIScrollView()
+    // MARK: Properties
+    
+    let scrollItems: [WalkthroughCellData] = WalkthroughCellData.getScrollData()
+    
     
     override func configureUI() {
         super.configureUI()
         view.backgroundColor = .white
         setupViews()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        pageControl.addTarget(self, action: #selector(self.pageControlSelectionAction(_:)), for: .touchUpInside)
+    }
+    
+    @objc func pageControlSelectionAction(_ sender: UIPageControl) {
+        //move page to wanted page
+        print(sender.currentPage)
+//        let indexPath = IndexPath(row: page ?? 0, section: 0)
+//        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     private func setupViews() {
         
-        view.addSubview(scrollView)
+        view.addSubview(collectionView)
         view.addSubview(stackView)
         
         stackView.addArrangedSubview(pageControl)
@@ -88,12 +118,13 @@ class WalkthroughViewController: BaseViewController {
         
         NSLayoutConstraint.activate([
             
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -20),
             
             
-        
+            
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -54),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
@@ -107,4 +138,35 @@ class WalkthroughViewController: BaseViewController {
         
         getStartedButton.roundCorner(with: 26)
     }
+}
+
+
+extension WalkthroughViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalkthroughScrollCell.identifier, for: indexPath) as? WalkthroughScrollCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.setData(with: scrollItems[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return scrollItems.count
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
+        
+        pageControl.currentPage = indexPath.row
+    }
+    
 }

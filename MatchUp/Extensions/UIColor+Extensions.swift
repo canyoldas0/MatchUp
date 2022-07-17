@@ -20,4 +20,12 @@ extension UIColor {
     class var disabled: UIColor {
         UIColor(red: 0.90, green: 0.90, blue: 0.92, alpha: 1.00)    
     }
+    
+    class var labelDark: UIColor {
+        UIColor(red: 0.21, green: 0.22, blue: 0.29, alpha: 1.00)
+    }
+    
+    class var labelPassiveDark: UIColor {
+        UIColor(red: 0.36, green: 0.38, blue: 0.45, alpha: 1.00)
+    }
 }
