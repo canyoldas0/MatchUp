@@ -9,6 +9,8 @@ import UIKit
 
 class WalkthroughViewController: BaseViewController {
     
+    
+    // MARK: UI Elements
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -79,24 +81,34 @@ class WalkthroughViewController: BaseViewController {
     
     // MARK: Properties
     
-    let scrollItems: [WalkthroughCellData] = WalkthroughCellData.getScrollData()
+    private(set) var viewModel: WalkthroughViewModelProtocol!
+    private let scrollItems: [WalkthroughCellData] = WalkthroughCellData.getScrollData()
+    
+    convenience init(viewModel: WalkthroughViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
     
     
+    // MARK: Setup Functions
     override func configureUI() {
         super.configureUI()
+        configureButtonActions()
         view.backgroundColor = .white
         setupViews()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        pageControl.addTarget(self, action: #selector(self.pageControlSelectionAction(_:)), for: .touchUpInside)
     }
     
-    @objc func pageControlSelectionAction(_ sender: UIPageControl) {
-        //move page to wanted page
-        print(sender.currentPage)
-//        let indexPath = IndexPath(row: page ?? 0, section: 0)
-//        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    private func configureButtonActions() {
+        
+        getStartedButton.addAction { [weak self] in
+            self?.viewModel.getStartedClicked()
+        }
+        
+        signInButton.addAction { [weak self] in
+            self?.viewModel.signInClicked()
+        }
     }
     
     private func setupViews() {
@@ -141,6 +153,7 @@ class WalkthroughViewController: BaseViewController {
 }
 
 
+// MARK: CollectionView Extensions
 extension WalkthroughViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

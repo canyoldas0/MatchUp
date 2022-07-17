@@ -8,6 +8,6 @@
 
 protocol SplashCoordinatorDelegate: AnyObject {
     
-    func goToMain()
+    func startApp()
     
 }

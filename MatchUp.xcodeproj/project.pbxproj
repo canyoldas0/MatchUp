@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1E0B45D7288431700022A53A /* WalkthroughScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45D6288431700022A53A /* WalkthroughScrollCell.swift */; };
+		1E0B45D928845A0B0022A53A /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45D828845A0B0022A53A /* UIControl+Extensions.swift */; };
+		1E0B45DC28845E450022A53A /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45DB28845E450022A53A /* WalkthroughViewModel.swift */; };
+		1E0B45DE28845E570022A53A /* WalkthroughViewConracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */; };
+		1E0B45E1288465370022A53A /* WalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */; };
 		1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */; };
 		1EA4FE132873749000B6719B /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */; };
 		1EA4FE142873749000B6719B /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0B2873749000B6719B /* Inter-Black.ttf */; };
@@ -20,7 +24,7 @@
 		1EA4FE1B2873749000B6719B /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE122873749000B6719B /* Inter-Light.ttf */; };
 		1EA4FE1E287374DD00B6719B /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE1D287374DD00B6719B /* UIFont+Extensions.swift */; };
 		1EA4FE212873764100B6719B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE202873764100B6719B /* UIColor+Extensions.swift */; };
-		1EA4FE242873783500B6719B /* SplashViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE232873783500B6719B /* SplashViewProtocols.swift */; };
+		1EA4FE242873783500B6719B /* SplashViewContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE232873783500B6719B /* SplashViewContracts.swift */; };
 		1EA4FE272873793900B6719B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE262873793900B6719B /* BaseViewController.swift */; };
 		1EA4FE2928737C5300B6719B /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE2828737C5300B6719B /* CoordinatorProtocol.swift */; };
 		1EA4FE2B28737D0B00B6719B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE2A28737D0B00B6719B /* AppCoordinator.swift */; };
@@ -43,6 +47,10 @@
 
 /* Begin PBXFileReference section */
 		1E0B45D6288431700022A53A /* WalkthroughScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughScrollCell.swift; sourceTree = "<group>"; };
+		1E0B45D828845A0B0022A53A /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
+		1E0B45DB28845E450022A53A /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
+		1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewConracts.swift; sourceTree = "<group>"; };
+		1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCoordinator.swift; sourceTree = "<group>"; };
 		1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		1EA4FE0B2873749000B6719B /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -55,7 +63,7 @@
 		1EA4FE122873749000B6719B /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		1EA4FE1D287374DD00B6719B /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		1EA4FE202873764100B6719B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		1EA4FE232873783500B6719B /* SplashViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewProtocols.swift; sourceTree = "<group>"; };
+		1EA4FE232873783500B6719B /* SplashViewContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewContracts.swift; sourceTree = "<group>"; };
 		1EA4FE262873793900B6719B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1EA4FE2828737C5300B6719B /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1EA4FE2A28737D0B00B6719B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -99,9 +107,28 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		1E0B45DA28845E2C0022A53A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45DB28845E450022A53A /* WalkthroughViewModel.swift */,
+				1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1E0B45DF288465330022A53A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		1E9D02BE287C2DF8001AE9B9 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				1E0B45DF288465330022A53A /* Coordinator */,
+				1E0B45DA28845E2C0022A53A /* ViewModel */,
 				1E0B45D5288431660022A53A /* Subviews */,
 				1E9D02BF287C2E37001AE9B9 /* View */,
 			);
@@ -143,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1EEDCC1D287359DB003FBD61 /* SplashViewModel.swift */,
-				1EA4FE232873783500B6719B /* SplashViewProtocols.swift */,
+				1EA4FE232873783500B6719B /* SplashViewContracts.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +288,7 @@
 				1EEDCC2A28736CB9003FBD61 /* String+Extensions.swift */,
 				1EA4FE1D287374DD00B6719B /* UIFont+Extensions.swift */,
 				1EA4FE202873764100B6719B /* UIColor+Extensions.swift */,
+				1E0B45D828845A0B0022A53A /* UIControl+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,7 +411,9 @@
 				1EA4FE2F28737D6600B6719B /* SplashCoordinator.swift in Sources */,
 				1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */,
 				1EEDCC1E287359DC003FBD61 /* SplashViewModel.swift in Sources */,
-				1EA4FE242873783500B6719B /* SplashViewProtocols.swift in Sources */,
+				1E0B45D928845A0B0022A53A /* UIControl+Extensions.swift in Sources */,
+				1EA4FE242873783500B6719B /* SplashViewContracts.swift in Sources */,
+				1E0B45E1288465370022A53A /* WalkthroughCoordinator.swift in Sources */,
 				1EEDCC2828736ADC003FBD61 /* UILabel+Extensions.swift in Sources */,
 				1EEDCC212873607B003FBD61 /* SplashFactory.swift in Sources */,
 				1EA4FE212873764100B6719B /* UIColor+Extensions.swift in Sources */,
@@ -392,7 +422,9 @@
 				1EEDCBFE287352BC003FBD61 /* AppDelegate.swift in Sources */,
 				1EEDCC2B28736CB9003FBD61 /* String+Extensions.swift in Sources */,
 				1EEDCC19287359B3003FBD61 /* SplashViewController.swift in Sources */,
+				1E0B45DC28845E450022A53A /* WalkthroughViewModel.swift in Sources */,
 				1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */,
+				1E0B45DE28845E570022A53A /* WalkthroughViewConracts.swift in Sources */,
 				1EA4FE1E287374DD00B6719B /* UIFont+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

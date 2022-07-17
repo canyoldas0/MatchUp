@@ -18,7 +18,7 @@ class SplashViewModel: SplashViewModelProtocol {
     }
     
     func didEndAnimation() {
-        coordinatorDelegate?.goToMain()
+        coordinatorDelegate?.startApp()
     }
     
 

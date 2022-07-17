@@ -30,12 +30,13 @@ final class SplashCoordinator: CoordinatorProtocol {
 
 extension SplashCoordinator: SplashCoordinatorDelegate {
     
-    func goToMain() {
-        let mainVC = WalkthroughViewController()
+    func startApp() {
+        let walkthroughCoordinator = WalkthroughCoordinator(dependencyContainer: dependencyContainer)
+        walkthroughCoordinator.parentCoordinator = parentCoordinator
         
-        rootViewController.viewControllers.removeAll()
-        rootViewController.viewControllers = [mainVC]
+        rootViewController.viewControllers.removeAll()        
+        walkthroughCoordinator.start()
         dismiss()
     }
-    
 }
+
