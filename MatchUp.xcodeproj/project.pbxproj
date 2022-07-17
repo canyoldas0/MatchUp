@@ -12,6 +12,7 @@
 		1E0B45DC28845E450022A53A /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45DB28845E450022A53A /* WalkthroughViewModel.swift */; };
 		1E0B45DE28845E570022A53A /* WalkthroughViewConracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */; };
 		1E0B45E1288465370022A53A /* WalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */; };
+		1E0B45E5288468E80022A53A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45E4288468E80022A53A /* LoginViewController.swift */; };
 		1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */; };
 		1EA4FE132873749000B6719B /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */; };
 		1EA4FE142873749000B6719B /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0B2873749000B6719B /* Inter-Black.ttf */; };
@@ -39,7 +40,6 @@
 		1EEDCC1C287359C4003FBD61 /* CYBase in Frameworks */ = {isa = PBXBuildFile; productRef = 1EEDCC1B287359C4003FBD61 /* CYBase */; };
 		1EEDCC1E287359DC003FBD61 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCC1D287359DB003FBD61 /* SplashViewModel.swift */; };
 		1EEDCC212873607B003FBD61 /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCC202873607B003FBD61 /* SplashFactory.swift */; };
-		1EEDCC2528736ACB003FBD61 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1EEDCC2428736ACB003FBD61 /* SnapKit */; };
 		1EEDCC2828736ADC003FBD61 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCC2728736ADC003FBD61 /* UILabel+Extensions.swift */; };
 		1EEDCC2B28736CB9003FBD61 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCC2A28736CB9003FBD61 /* String+Extensions.swift */; };
 		1EEDCC2F28736DD7003FBD61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDCC3128736DD7003FBD61 /* Localizable.strings */; };
@@ -51,6 +51,7 @@
 		1E0B45DB28845E450022A53A /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewConracts.swift; sourceTree = "<group>"; };
 		1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCoordinator.swift; sourceTree = "<group>"; };
+		1E0B45E4288468E80022A53A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		1EA4FE0B2873749000B6719B /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EEDCC1C287359C4003FBD61 /* CYBase in Frameworks */,
-				1EEDCC2528736ACB003FBD61 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +122,14 @@
 				1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1E0B45E2288467EC0022A53A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45E4288468E80022A53A /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		1E9D02BE287C2DF8001AE9B9 /* Walkthrough */ = {
@@ -255,6 +263,7 @@
 		1EEDCC12287354C7003FBD61 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1E0B45E2288467EC0022A53A /* Login */,
 				1E9D02BE287C2DF8001AE9B9 /* Walkthrough */,
 				1EEDCC17287359AA003FBD61 /* Splash */,
 			);
@@ -312,7 +321,6 @@
 			name = MatchUp;
 			packageProductDependencies = (
 				1EEDCC1B287359C4003FBD61 /* CYBase */,
-				1EEDCC2428736ACB003FBD61 /* SnapKit */,
 			);
 			productName = MatchUp;
 			productReference = 1EEDCBFA287352BC003FBD61 /* MatchUp.app */;
@@ -345,7 +353,6 @@
 			mainGroup = 1EEDCBF1287352BC003FBD61;
 			packageReferences = (
 				1EEDCC1A287359C4003FBD61 /* XCRemoteSwiftPackageReference "CYBase" */,
-				1EEDCC2328736ACB003FBD61 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1EEDCBFB287352BC003FBD61 /* Products */;
 			projectDirPath = "";
@@ -407,6 +414,7 @@
 				1EA4FE3128737DFD00B6719B /* DependencyContainer.swift in Sources */,
 				1EA4FE3328737EDC00B6719B /* SplashCoordinatorDelegate.swift in Sources */,
 				1EA4FE2B28737D0B00B6719B /* AppCoordinator.swift in Sources */,
+				1E0B45E5288468E80022A53A /* LoginViewController.swift in Sources */,
 				1E0B45D7288431700022A53A /* WalkthroughScrollCell.swift in Sources */,
 				1EA4FE2F28737D6600B6719B /* SplashCoordinator.swift in Sources */,
 				1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */,
@@ -655,14 +663,6 @@
 				kind = branch;
 			};
 		};
-		1EEDCC2328736ACB003FBD61 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -670,11 +670,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1EEDCC1A287359C4003FBD61 /* XCRemoteSwiftPackageReference "CYBase" */;
 			productName = CYBase;
-		};
-		1EEDCC2428736ACB003FBD61 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1EEDCC2328736ACB003FBD61 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

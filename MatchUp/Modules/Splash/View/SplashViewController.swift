@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import struct SnapKit.ConstraintViewDSL
 
 class SplashViewController: BaseViewController {
     
@@ -34,10 +33,11 @@ class SplashViewController: BaseViewController {
         super.configureUI()
         
         view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
+        NSLayoutConstraint.activate([
+        
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func startAnimation() {
