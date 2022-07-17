@@ -29,6 +29,7 @@ class SplashViewController: BaseViewController {
         viewModel.load()
     }
     
+    
     override func configureUI() {
         super.configureUI()
         

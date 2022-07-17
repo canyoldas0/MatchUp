@@ -13,6 +13,7 @@
 		1E0B45DE28845E570022A53A /* WalkthroughViewConracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */; };
 		1E0B45E1288465370022A53A /* WalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */; };
 		1E0B45E5288468E80022A53A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45E4288468E80022A53A /* LoginViewController.swift */; };
+		1E0B45F028847F5C0022A53A /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0B45EF28847F5C0022A53A /* InputField.swift */; };
 		1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */; };
 		1EA4FE132873749000B6719B /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */; };
 		1EA4FE142873749000B6719B /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EA4FE0B2873749000B6719B /* Inter-Black.ttf */; };
@@ -52,6 +53,7 @@
 		1E0B45DD28845E570022A53A /* WalkthroughViewConracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewConracts.swift; sourceTree = "<group>"; };
 		1E0B45E0288465370022A53A /* WalkthroughCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCoordinator.swift; sourceTree = "<group>"; };
 		1E0B45E4288468E80022A53A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1E0B45EF28847F5C0022A53A /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		1EA4FE0A2873749000B6719B /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		1EA4FE0B2873749000B6719B /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -132,6 +134,22 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		1E0B45ED28847F440022A53A /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45EE28847F4C0022A53A /* InputField */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		1E0B45EE28847F4C0022A53A /* InputField */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B45EF28847F5C0022A53A /* InputField.swift */,
+			);
+			path = InputField;
+			sourceTree = "<group>";
+		};
 		1E9D02BE287C2DF8001AE9B9 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,13 +167,6 @@
 				1E9D02C0287C2E3F001AE9B9 /* WalkthroughViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1E9D02C2287C472B001AE9B9 /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		1EA4FE092873747300B6719B /* Inter */ = {
@@ -237,7 +248,7 @@
 		1EEDCBFC287352BC003FBD61 /* MatchUp */ = {
 			isa = PBXGroup;
 			children = (
-				1E9D02C2287C472B001AE9B9 /* UIComponents */,
+				1E0B45ED28847F440022A53A /* UIComponents */,
 				1EA4FE3628738C8500B6719B /* Utils */,
 				1EA4FE252873793000B6719B /* Base */,
 				1EEDCC2628736ACE003FBD61 /* Extensions */,
@@ -434,6 +445,7 @@
 				1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */,
 				1E0B45DE28845E570022A53A /* WalkthroughViewConracts.swift in Sources */,
 				1EA4FE1E287374DD00B6719B /* UIFont+Extensions.swift in Sources */,
+				1E0B45F028847F5C0022A53A /* InputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
