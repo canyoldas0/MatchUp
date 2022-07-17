@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WalkthroughCoordinator: WalkthroughCoordinatorProtocol {
+final class WalkthroughCoordinator: CoordinatorProtocol, WalkthroughCoordinatorProtocol {
     weak var parentCoordinator: ParentCoordinatorDelegate?
     var children: [CoordinatorProtocol] = []
     private(set) var rootViewController: UINavigationController!
@@ -28,6 +28,10 @@ final class WalkthroughCoordinator: WalkthroughCoordinatorProtocol {
     
     func goToSignIn() {
         print("sign in coordinator")
+        let loginVC = LoginViewController()
+        
+        dependencyContainer.window.rootViewController = loginVC
+        dismiss()
     }
     
     func goToMain() {
