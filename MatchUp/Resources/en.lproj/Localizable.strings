@@ -10,3 +10,7 @@
 
 "home_page" = "Home";
 
+// MARK: Login
+
+"forgot_password" = "Forgot Password?";
+

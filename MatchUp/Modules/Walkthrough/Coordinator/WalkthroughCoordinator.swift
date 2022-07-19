@@ -29,8 +29,10 @@ final class WalkthroughCoordinator: CoordinatorProtocol, WalkthroughCoordinatorP
     func goToSignIn() {
         print("sign in coordinator")
         let loginVC = LoginViewController()
+        loginVC.title = "Login"
+        let navigationVC = UINavigationController(rootViewController: loginVC)
         
-        dependencyContainer.window.rootViewController = loginVC
+        dependencyContainer.window.rootViewController = navigationVC
         dismiss()
     }
     

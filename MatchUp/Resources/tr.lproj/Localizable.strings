@@ -9,3 +9,7 @@
 
 "home_page" = "Ana Sayfa";
 
+// MARK: Login
+
+"forgot_password" = "Şifreni mi unuttun?";
+

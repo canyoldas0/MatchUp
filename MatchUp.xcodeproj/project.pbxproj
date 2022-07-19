@@ -141,6 +141,7 @@
 		1E0B45ED28847F440022A53A /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1ECD30A628871DB400DCB4A2 /* SocialButtonStack */,
 				1E0B45EE28847F4C0022A53A /* InputField */,
 			);
 			path = UIComponents;
@@ -233,6 +234,13 @@
 				1ECD30A42886EAC900DCB4A2 /* Typealiases.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1ECD30A628871DB400DCB4A2 /* SocialButtonStack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SocialButtonStack;
 			sourceTree = "<group>";
 		};
 		1EEDCBF1287352BC003FBD61 = {
