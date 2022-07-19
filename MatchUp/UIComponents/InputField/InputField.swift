@@ -8,25 +8,9 @@
 import UIKit
 import CYBase
 
-enum InputType {
-    case numeric
-    case alpha
-    case email
-    case password
-    case fullName
-}
-
-class InputFieldDelegate {
-    
-    private let inputType: InputType
-    
-    init(inputType: InputType) {
-        self.inputType = inputType
-    }
-}
-
 class InputField: BaseView {
     
+    // MARK: Components
     private(set) lazy var textField: UITextField = {
        let temp = UITextField()
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -36,8 +20,22 @@ class InputField: BaseView {
         return temp
     }()
        
+    // MARK: Properties
     private var bottomLineConstraint: NSLayoutConstraint!
     private(set) lazy var bottomLine = UIView()
+    var delegate: InputFieldDelegate? {
+        didSet {
+            delegate?.configureUI(inputField: self)
+        }
+    }
+    
+    var placeholder: String? {
+        get {
+            textField.placeholder
+        } set {
+            textField.placeholder = newValue
+        }
+    }
     
     override func addViewComponents() {
         super.addViewComponents()
@@ -62,24 +60,21 @@ class InputField: BaseView {
         bottomLine.backgroundColor = .lightGray
     }
     
-//    func setLeftView(view: UIView) {
-//        textField.leftView = view
-//        textField.leftViewMode = .always
-//    }
-    
     private func updateBorderStatus() {
         bottomLine.backgroundColor = textField.isEditing ? .labelBlue : .lightGray
-        bottomLineConstraint = bottomLine.heightAnchor.constraint(equalToConstant: textField.isEditing ? 5: 0.5)
+        bottomLineConstraint.constant = textField.isEditing ? 1.5 : 0.5
         
         layoutIfNeeded()
     }
     
     func didBeginEditing() {
+        // delegate?.didBeginEditing
         updateBorderStatus()
         //
     }
     
     func didEndEditing() {
+        // delegate?.didBeginEditing
         updateBorderStatus()
         //
     }

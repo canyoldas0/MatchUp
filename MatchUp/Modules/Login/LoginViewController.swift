@@ -9,28 +9,48 @@ import UIKit
 
 class LoginViewController: BaseViewController {
     
-    lazy var inputField: InputField = {
-       let temp = InputField()
+    lazy var usernameInputField: InputField = {
+        let temp = InputField()
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     
+    lazy var passwordInputField: InputField = {
+        let temp = InputField()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private let inputStack = UIStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        prepareUI()
+    }
+    
+    private func prepareUI() {
+        inputStack.axis = .vertical
+        inputStack.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(inputStack)
         
-        view.addSubview(inputField)
+        usernameInputField.delegate = InputFieldDelegate(inputType: .alpha)
+        passwordInputField.delegate = InputFieldDelegate(inputType: .password)
         
         NSLayoutConstraint.activate([
-
-            inputField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            inputField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            inputField.heightAnchor.constraint(equalToConstant: 52),
-            inputField.widthAnchor.constraint(equalToConstant: 352)
+            inputStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            inputStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            inputStack.widthAnchor.constraint(equalToConstant: 352),
+            
+            usernameInputField.heightAnchor.constraint(equalToConstant: 52),
+            passwordInputField.heightAnchor.constraint(equalToConstant: 52),
         ])
         
-//        let searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))     
-//        inputField.setLeftView(view: searchIcon)
+        inputStack.addArrangedSubview(usernameInputField)
+        inputStack.addArrangedSubview(passwordInputField)
+        
+        inputStack.setCustomSpacing(20, after: usernameInputField)
     }
+    
     
 }

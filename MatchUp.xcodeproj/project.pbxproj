@@ -34,6 +34,7 @@
 		1EA4FE3128737DFD00B6719B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE3028737DFD00B6719B /* DependencyContainer.swift */; };
 		1EA4FE3328737EDC00B6719B /* SplashCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE3228737EDC00B6719B /* SplashCoordinatorDelegate.swift */; };
 		1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE3428738C7B00B6719B /* ViewControllerHelper.swift */; };
+		1EDBC4FB2885F95700B47453 /* InputFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC4FA2885F95700B47453 /* InputFieldDelegate.swift */; };
 		1EEDCBFE287352BC003FBD61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCBFD287352BC003FBD61 /* AppDelegate.swift */; };
 		1EEDCC07287352BD003FBD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDCC06287352BD003FBD61 /* Assets.xcassets */; };
 		1EEDCC0A287352BD003FBD61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDCC08287352BD003FBD61 /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		1EA4FE3028737DFD00B6719B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		1EA4FE3228737EDC00B6719B /* SplashCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		1EA4FE3428738C7B00B6719B /* ViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHelper.swift; sourceTree = "<group>"; };
+		1EDBC4FA2885F95700B47453 /* InputFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldDelegate.swift; sourceTree = "<group>"; };
 		1EEDCBFA287352BC003FBD61 /* MatchUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEDCBFD287352BC003FBD61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEDCC06287352BD003FBD61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1E0B45EF28847F5C0022A53A /* InputField.swift */,
+				1EDBC4FA2885F95700B47453 /* InputFieldDelegate.swift */,
 			);
 			path = InputField;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */,
 				1EEDCC1E287359DC003FBD61 /* SplashViewModel.swift in Sources */,
 				1E0B45D928845A0B0022A53A /* UIControl+Extensions.swift in Sources */,
+				1EDBC4FB2885F95700B47453 /* InputFieldDelegate.swift in Sources */,
 				1EA4FE242873783500B6719B /* SplashViewContracts.swift in Sources */,
 				1E0B45E1288465370022A53A /* WalkthroughCoordinator.swift in Sources */,
 				1EEDCC2828736ADC003FBD61 /* UILabel+Extensions.swift in Sources */,
