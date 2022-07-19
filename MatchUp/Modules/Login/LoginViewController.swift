@@ -36,7 +36,7 @@ class LoginViewController: BaseViewController {
         inputStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(inputStack)
         
-        usernameInputField.delegate = InputFieldDelegate(inputType: .alpha)
+        usernameInputField.delegate = InputFieldDelegate(inputType: .phoneNumber)
         passwordInputField.delegate = InputFieldDelegate(inputType: .password)
         
         NSLayoutConstraint.activate([
