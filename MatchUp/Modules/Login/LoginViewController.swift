@@ -12,12 +12,14 @@ class LoginViewController: BaseViewController {
     lazy var usernameInputField: InputField = {
         let temp = InputField()
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.placeholder = "User name"
         return temp
     }()
     
     lazy var passwordInputField: InputField = {
         let temp = InputField()
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.placeholder = "Password"
         return temp
     }()
     
@@ -50,6 +52,7 @@ class LoginViewController: BaseViewController {
         inputStack.addArrangedSubview(passwordInputField)
         
         inputStack.setCustomSpacing(20, after: usernameInputField)
+        
     }
     
     

@@ -19,33 +19,31 @@ class InputFieldDelegate {
     
     private let inputType: InputType
     
+    /// These handlers for manipulating the text data coming from the textfield if needed.
+    public var textFieldEndEditing: GenericHandler<Bool>?
+    public var textFieldValueChanged: GenericHandler<String>?
+    public var textCountHandler: GenericHandler<Int>?
+    
     init(inputType: InputType) {
         self.inputType = inputType
     }
     
     func configureUI(inputField: InputField) {
-        setPlaceholder(inputField: inputField)
         
-        switch inputType {
-        case .password:
-            inputField.textField.isSecureTextEntry = true
-        default:
-            break
+        if inputType == .password {
+            inputField.isSecureTextEntry = true
         }
     }
     
-    private func setPlaceholder(inputField: InputField) {
-        
-        var placeholder = ""
-        
-        switch inputType {
-        case .password:
-            placeholder = "Enter your password"
-        default:
-            break
+    func didBeginEditing(inputField: InputField) {
+        guard let text = inputField.text else {
+            return
         }
+        //
         
-        inputField.placeholder = placeholder
     }
     
+    func didEndEditing(inputField: InputField) {
+        //
+    }
 }

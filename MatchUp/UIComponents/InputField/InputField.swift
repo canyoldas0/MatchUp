@@ -11,16 +11,25 @@ import CYBase
 class InputField: BaseView {
     
     // MARK: Components
-    private(set) lazy var textField: UITextField = {
-       let temp = UITextField()
+    private lazy var textField: UITextField = {
+        let temp = UITextField()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.textColor = .labelDark
-        temp.attributedPlaceholder = NSAttributedString(string: "placeholder text", attributes: [NSAttributedString.Key.foregroundColor: UIColor.labelPassiveDark])
+        temp.attributedPlaceholder = NSAttributedString(
+            string: "placeholder text",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.labelPassiveDark,
+                NSAttributedString.Key.font: UIFont.mainRegular.withSize(15)
+            ]
+        )
         temp.delegate = self
         return temp
     }()
-       
+    
     // MARK: Properties
+    
+    /// Property that helps you to set bottomline color when textfield is active.
+    var bottomLineActiveColor: UIColor = .labelBlue
     private var bottomLineConstraint: NSLayoutConstraint!
     private(set) lazy var bottomLine = UIView()
     var delegate: InputFieldDelegate? {
@@ -29,6 +38,34 @@ class InputField: BaseView {
         }
     }
     
+    
+    // MARK: Textfield Related Properties
+    /// Main reason to have this properties in this way is to abstract the textfield and make it inaccessible from outside.
+    
+    /// String value for textfield's active text.
+    var text: String? {
+        get {
+            textField.text
+        } set {
+            textField.text = newValue
+        }
+    }
+    
+    /// Boolean value for whether textfield is in editing or not.
+    var isEditing: Bool? {
+        textField.isEditing
+    }
+    
+    /// Boolean value that indicates  textfield characters are masked or not.
+    var isSecureTextEntry: Bool {
+        get {
+            textField.isSecureTextEntry
+        } set {
+            textField.isSecureTextEntry = newValue
+        }
+    }
+    
+    /// String value for textfield's placeholder.
     var placeholder: String? {
         get {
             textField.placeholder
@@ -45,7 +82,7 @@ class InputField: BaseView {
         
         bottomLineConstraint = bottomLine.heightAnchor.constraint(equalToConstant: 0.5)
         NSLayoutConstraint.activate([
-        
+            
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -56,27 +93,27 @@ class InputField: BaseView {
             bottomLine.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomLineConstraint
         ])
-        
         bottomLine.backgroundColor = .lightGray
     }
     
     private func updateBorderStatus() {
-        bottomLine.backgroundColor = textField.isEditing ? .labelBlue : .lightGray
+        bottomLine.backgroundColor = textField.isEditing ? bottomLineActiveColor : .lightGray
         bottomLineConstraint.constant = textField.isEditing ? 1.5 : 0.5
-        
         layoutIfNeeded()
     }
     
     func didBeginEditing() {
-        // delegate?.didBeginEditing
+        // when
         updateBorderStatus()
-        //
+        // then
+        delegate?.didBeginEditing(inputField: self)
     }
     
     func didEndEditing() {
-        // delegate?.didBeginEditing
+        // when
         updateBorderStatus()
-        //
+        // then
+        delegate?.didEndEditing(inputField: self)
     }
 }
 
