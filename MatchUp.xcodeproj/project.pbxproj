@@ -35,6 +35,7 @@
 		1EA4FE3328737EDC00B6719B /* SplashCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE3228737EDC00B6719B /* SplashCoordinatorDelegate.swift */; };
 		1EA4FE3528738C7B00B6719B /* ViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4FE3428738C7B00B6719B /* ViewControllerHelper.swift */; };
 		1ECD30A52886EAC900DCB4A2 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD30A42886EAC900DCB4A2 /* Typealiases.swift */; };
+		1ECD30A8288720DD00DCB4A2 /* SocialButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD30A7288720DD00DCB4A2 /* SocialButtonStack.swift */; };
 		1EDBC4FB2885F95700B47453 /* InputFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC4FA2885F95700B47453 /* InputFieldDelegate.swift */; };
 		1EEDCBFE287352BC003FBD61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCBFD287352BC003FBD61 /* AppDelegate.swift */; };
 		1EEDCC07287352BD003FBD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDCC06287352BD003FBD61 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		1EA4FE3228737EDC00B6719B /* SplashCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		1EA4FE3428738C7B00B6719B /* ViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHelper.swift; sourceTree = "<group>"; };
 		1ECD30A42886EAC900DCB4A2 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		1ECD30A7288720DD00DCB4A2 /* SocialButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButtonStack.swift; sourceTree = "<group>"; };
 		1EDBC4FA2885F95700B47453 /* InputFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldDelegate.swift; sourceTree = "<group>"; };
 		1EEDCBFA287352BC003FBD61 /* MatchUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEDCBFD287352BC003FBD61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		1ECD30A628871DB400DCB4A2 /* SocialButtonStack */ = {
 			isa = PBXGroup;
 			children = (
+				1ECD30A7288720DD00DCB4A2 /* SocialButtonStack.swift */,
 			);
 			path = SocialButtonStack;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				1EA4FE2928737C5300B6719B /* CoordinatorProtocol.swift in Sources */,
 				1EEDCBFE287352BC003FBD61 /* AppDelegate.swift in Sources */,
 				1EEDCC2B28736CB9003FBD61 /* String+Extensions.swift in Sources */,
+				1ECD30A8288720DD00DCB4A2 /* SocialButtonStack.swift in Sources */,
 				1EEDCC19287359B3003FBD61 /* SplashViewController.swift in Sources */,
 				1E0B45DC28845E450022A53A /* WalkthroughViewModel.swift in Sources */,
 				1E9D02C1287C2E3F001AE9B9 /* WalkthroughViewController.swift in Sources */,

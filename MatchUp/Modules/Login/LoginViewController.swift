@@ -32,6 +32,19 @@ class LoginViewController: BaseViewController {
         return temp
     }()
     
+    lazy var socialStack: SocialButtonStack = {
+       let temp = SocialButtonStack()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    lazy var signInButton: UIButton = {
+       let temp = UIButton()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.setTitle("log_in".localized(), for: .normal)
+        return temp
+    }()
+    
     private let inputStack = UIStackView()
     
     override func viewDidLoad() {
@@ -57,6 +70,13 @@ class LoginViewController: BaseViewController {
         usernameInputField.delegate = InputFieldDelegate(inputType: .phoneNumber)
         passwordInputField.delegate = InputFieldDelegate(inputType: .password)
         
+        let data = SocialButtonStackData(socials: [.apple,
+                                                   .google,
+                                                   .facebook,
+                                                   .twitter])
+        socialStack.setData(data: data)
+        socialStack.delegate = self
+
         NSLayoutConstraint.activate([
             inputStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             inputStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -65,16 +85,25 @@ class LoginViewController: BaseViewController {
             
             usernameInputField.heightAnchor.constraint(equalToConstant: 52),
             passwordInputField.heightAnchor.constraint(equalToConstant: 52),
+            
+            socialStack.heightAnchor.constraint(equalToConstant: 36)
         ])
         
         inputStack.addArrangedSubview(usernameInputField)
         inputStack.addArrangedSubview(passwordInputField)
         inputStack.addArrangedSubview(forgotPasswordButton)
+        inputStack.addArrangedSubview(socialStack)
         
+        socialStack.setupConstraints(superView: self.view)
         inputStack.setCustomSpacing(20, after: usernameInputField)
         inputStack.setCustomSpacing(26, after: passwordInputField)
-    
+        inputStack.setCustomSpacing(49, after: forgotPasswordButton)
     }
+}
+
+extension LoginViewController: SocialButtonStackProtocol {
     
-    
+    func buttonClicked(socialType: SocialType) {
+        print(socialType.rawValue)
+    }
 }
